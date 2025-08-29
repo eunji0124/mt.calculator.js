@@ -8,11 +8,15 @@
 </head>
 <body>
     <div class="calculator">
-        <div class="display" id="display">0</div>
+        <a href="#" id="color_mode">DARK</a>
+        <div class="display">
+            <div id="history"></div>
+            <div id="display">0</div>
+        </div>
         <div class="buttons">
             <button class="clear" onclick="clearDisplay()">C</button>
             <button class="operator" onclick="appendOperator('/')">÷</button>
-            <button class="operator" onclick="appendOperator('*')">×</button>
+            <button class="operator" onclick="appendOperator('*')">x</button>
             <button class="operator" onclick="appendOperator('-')">-</button>
             
             <button onclick="appendNumber('7')">7</button>
@@ -28,13 +32,14 @@
             <button onclick="appendNumber('1')">1</button>
             <button onclick="appendNumber('2')">2</button>
             <button onclick="appendNumber('3')">3</button>
+            <button class="zero" onclick="appendNumber('0')">0</button>
+
             <button class="equals" onclick="calculate()">=</button>
             
-            <button class="zero" onclick="appendNumber('0')">0</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
-    <!-- <script src="script-nohint.js"></script> -->
+    <!-- <script src="script.js"></script> -->
+    <script src="script-nohint.js"></script>
 </body>
 </html>

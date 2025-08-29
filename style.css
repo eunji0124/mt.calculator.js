@@ -11,6 +11,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: all 0.3s ease;
 }
 
 .calculator {
@@ -19,6 +20,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     width: 320px;
+    position: relative;
 }
 
 .display {
@@ -33,7 +35,13 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
-
+#history{
+    color: #888;
+    font-size: 1rem;
+    text-align: right;
+    padding: 0;
+    margin-bottom: 20px;
+}
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -54,7 +62,10 @@ button {
    힌트: button:hover 선택자 사용
    - background 색상을 #e0e0e0으로 변경
    - transform: scale(1.05) 추가 */
-
+button:hover{
+    background: #e0e0e0;
+    transform: scale(1.05);
+}
 
 
 .operator {
@@ -65,7 +76,9 @@ button {
 /* CSS-2: 연산자 버튼 호버 효과 추가하기 
    힌트: .operator:hover 선택자 사용
    - background 색상을 #ff6348로 변경 */
-
+.operator:hover{
+    background:#ff6348;
+}
 
 
 .equals {
@@ -77,7 +90,9 @@ button {
 /* CSS-3: equals 버튼 호버 효과 추가하기
    힌트: .equals:hover 선택자 사용
    - background 색상을 #00a884로 변경 */
-
+.equals:hover{
+    background: #00a884;
+}
 
 
 .clear {
@@ -88,14 +103,40 @@ button {
 /* CSS-4: clear 버튼 호버 효과 추가하기
    힌트: .clear:hover 선택자 사용  
    - background 색상을 #fcb93c로 변경 */
+.clear:hover{
+    background: #fcb93c;
+}
 
 
-
-.zero {
-    grid-column: span 2;
+.equals {
+    grid-column: span 4;
 }
 
 /* 추가 스타일링을 위한 클래스 */
 .pressed {
     transform: scale(0.95);
+}
+
+#color_mode{
+    text-decoration: none;
+    color: #000;
+    position: absolute;
+    right: 0;
+    top: -40px;
+    background: #fff;
+    border-radius: 50px;
+    padding: 5px 10px;
+}
+
+
+body.dark{
+    background: linear-gradient(135deg, #070a18 0%, #490b8a 100%);
+}
+body.dark .calculator{
+    background: #707070;
+}
+body.dark #color_mode{
+    color: #fff;
+    background: #707070;
+
 }
