@@ -120,8 +120,14 @@ let colorChange = document.getElementById('color_mode');
 function toggleClass(obj, className) {
     obj.classList.toggle(className); 
 }
+colorChange.textContent = 'DARK';
 colorChange.addEventListener('click', function() {
     toggleClass(body, 'dark');
+    if(body.classList.contains('dark')){
+        colorChange.textContent = 'WHITE';
+    }else{
+        colorChange.textContent = 'DARK';
+    }
 });
 // 초기 디스플레이 설정
 updateDisplay();
